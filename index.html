@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        li {
+          color: black;
+          background-color:white; 
+          list-style-type: none;
+          padding-left : 10px;
+          margin: 0;
+          margin: 10px ;
+          text-align: left;
+          margin-left: 0;
+          display: flex;
+          justify-content: space-between;
+          margin-right: 5px;
+        }
+
+
+      ul {
+        margin-left: 0px; 
+        padding: 0;
+    }
+     
+      span{
+        color: white;
+        background-color: brown;
+        box-shadow: 1px 2px 3px black;
+        padding: 2px 8px;
+        cursor: pointer;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      
+        
+    </style>
+</head>
+<body style="display: flex;justify-content: center;">
+
+    <div class="box" style="background-color: rgb(36, 50, 158);padding: 50px; padding-bottom: 70px;
+    margin-top: 50px; border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 2px 3px #eee;">
+
+     <div class="heading" style="color: white; text-align: center;padding-bottom: 20px;font-size: 30px;"> To-Do List</div>
+     
+     <div class="spacce-between" style="display: flex;justify-content: space-around;">
+        
+     <div class="task-input">
+        <input type="text" placeholder="add-task">
+     </div>
+
+     <div class="Click-me " style="padding-left: 10px;">
+     <button style="color: white; background-color: brown;"> add</button>
+     </div>
+
+    </div>
+     
+    <div class="add-list">
+        <ul>
+        </ul>
+    </div>    
+    </div>
+</body>
+<script>
+    const input = document.querySelector("input");
+    const button = document.querySelector("button")
+    const ul = document.querySelector("ul");
+
+    button.addEventListener("click",function(){
+        const task = input.value.trim();
+        if(task === ""){
+            alert("please enter a value");
+            return 0;
+        }
+        
+        const li = document.createElement("li");
+        li.innerText = task;
+        ul.appendChild(li);
+
+
+        const span = document.createElement("span");
+        span.innerText = " delete"
+        li.appendChild(span)
+
+        input.value = " "
+
+       span.addEventListener("click",function(){
+        ul.removeChild(li);
+       })
+        
+    });
+
+</script>
+</html>
