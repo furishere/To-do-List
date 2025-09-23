@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> random number</title>
+</head>
+<body>
+    <h1>number <span>0</span></h1>
+    <button> random number</button>
+</body>
+    <script>
+        const number = document.querySelector("span")
+
+        const random = document.querySelector("button")
+
+
+        random.addEventListener("click",() =>{
+            const n = Math.floor(Math.random() * 256)
+
+            number.innerText = `${n}`
+            
+            
+        })
+    </script>
+</html>

@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Digital Clock</title>
+ </head>
+ <body>
+    <h1>Digital Clock </h1>
+    <h2 style="background-color: blue;color: aliceblue;"><span></span></h2>
+ </body>
+    <script>
+        const span = document.querySelector("span")
+
+        setInterval(() => {
+// that's how u get current time in string 
+        const now = new Date()
+        const time = now.toLocaleTimeString()
+        span.textContent = time
+        },1000)
+
+    </script>
+ </html>

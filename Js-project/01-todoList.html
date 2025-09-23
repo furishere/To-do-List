@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To do List</title>
+    <style>
+        .button2{
+            background-color: red;
+            color: aliceblue;
+            border: none;
+            border-radius: 0.2cm;
+            margin-top: 3px;
+            margin-left: 150px;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="add list here">
+
+    <button type="submit"> add</button>
+</body>
+<script>
+    const input = document.querySelector("input")
+    const button  = document.querySelector("button")
+    const body = document.querySelector("body")
+
+    button.addEventListener("click",() =>{
+        if(input.value == ""){
+            alert("enter your task")
+// for no further execution or work
+            return
+        }
+
+        const value = input.value.trim()
+
+
+        const div = document.createElement("div")
+        const button2 = document.createElement("button")
+
+//  we use classList to add css property directly from style element to js element
+        button2.classList.add("button2")
+        div.textContent = value
+        button2.innerText = "delete"
+
+        div.appendChild(button2)
+
+        body.appendChild(div)
+
+        button2.addEventListener("click",() => {
+            div.remove()
+        })
+
+      input.value = ""  
+    })
+</script>
+</html>

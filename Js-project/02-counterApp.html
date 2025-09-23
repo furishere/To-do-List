@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> counter app </title>
+</head>
+<body style="background-color: blue;">
+    <h1 style="color: aliceblue;"> Number: <span> 0 </span> </h1>
+    <button id="increment"> increment </button>
+    <button id="decrement"> decrement </button>
+    <button id="reset"> rest counter </button>
+</body>
+<script>
+    const increment = document.querySelector("#increment")
+    const decrement   = document.querySelector("#decrement")
+    const rest = document.querySelector("#reset")
+    const h1 = document.querySelector("span")
+    
+    const body = document.querySelector("body")
+
+    let n = 0
+
+    increment.addEventListener("click",() => {
+        n++
+        h1.innerText = `${n}`
+        body.style.backgroundColor = 'green'
+    })
+
+    decrement.addEventListener("click",() => {
+        n--
+        h1.innerText = `${n}`
+        body.style.backgroundColor = 'red'
+    })
+    rest.addEventListener("click",() => {
+        n = 0
+        h1.innerText = `${n}`
+        body.style.backgroundColor = 'blue'
+    })
+</script>
+</html>
